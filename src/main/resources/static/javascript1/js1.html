@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ukesoppgaver JS1</title>
+
+  <h2>Ukesoppgaver JS1</h2>
+
+  <script>
+    // OPPPGAVE 1
+    function heiVerden() {
+      document.write("Hei verden");
+    }
+
+    // OPPPGAVE 2
+    function heiVerdenAlert() {
+      alert("Hei verden");
+    }
+
+    // OPPPGAVE 3
+    function write(data) {
+      document.write(data);
+    }
+
+    // OPPPGAVE 4
+    function writeAlert(data) {
+      alert(data);
+    }
+
+    // OPPPGAVE 5
+    function writeConsole(data) {
+      console.log(data);
+    }
+
+    //EKSTRAOPPPGAVE 6
+    function skrivInputFarge(input){
+      input = input.fontcolor("red")
+      document.write(input);
+    }
+    //EKSTRAOPPPGAVE 7
+    function skrivStorInputAlert(input){
+      input = input.toUpperCase();
+      alert(input);
+    }
+    //EKSTRAOPPPGAVE 8
+    function skrivUtEn(){
+      const ut = 1;
+      console.log(ut);
+    }
+    //EKSTRAOPPPGAVE 9
+    let ut = 0;
+    function tellOpp(){
+      ut += 1;
+      console.log(ut);
+    }
+    //EKSTRAOPPPGAVE 10
+    let out = 0;
+    function tellOppMelding(){
+      out += 1;
+      let meldingP1 = "Du har trykket på knappen "
+      let meldingP2 = " ganger."
+      console.log(meldingP1 + out + meldingP2)
+    }
+
+  </script>
+</head>
+<body>
+
+<!-- OPPPGAVE 1 - Lag en HTML-knapp som kaller en JavaScript-funksjon som
+     viser "Hei verden" på en blank side via "document.write".
+     Bruk hendelsen "onClick" på knappen. -->
+<h2>Oppgave 1</h2>
+<button onClick="heiVerden();">Klikk meg for Oppgave 1!</button>
+
+<!-- OPPPGAVE 2 - Gjør om oppgave 1 til å vise en "alert"-boks når knappen trykkes.-->
+<h2>Oppgave 2</h2>
+<button onClick="heiVerdenAlert();">Klikk meg for Oppgave 2!</button>
+
+<!-- OPPPGAVE 3 - Lag et input-felt i en HTML-side.
+    Lag et JavaScript som leser dataene fra input-feltet når det er endringer i
+    feltet (hendelsen "onChange") og som skriver disse dataene ut på en
+    blank side med "document.write". Funksjonen som kalles ved "onChange" skal
+    ta en inn-parameter, som er verdien av input-feltet. -->
+<h2>Oppgave 3</h2>
+<form>
+  <input onChange="write(this.value);" type="text" value=""/>
+</form>
+
+<!-- OPPPGAVE 4 - Endre oppgave 3 ved å legge ut en "pop-up/alert"-boks
+    som skal inneholde teksten fra input-feltet. -->
+<h2>Oppgave 4</h2>
+<form>
+  <input onChange="writeAlert(this.value);" type="text" value=""/>
+</form>
+
+<!-- OPPGAVE 5- Utvid oppgave 4 med å skrive informasjonen fra input-feltet
+    til "console.log". Sjekk at dataene blir skrevet til loggen. -->
+<h2>Oppgave 5</h2>
+<form>
+  <input onChange="writeConsole(this.value);" type="text" value=""/>
+</form>
+
+<!-- EKSTRAOPPPGAVE 6 - Utvide oppgave 3 ved å gi et farge til teksten som vises
+       på blank side -->
+<h2>Oppgave 6</h2>
+<form>
+  <input onchange="skrivInputFarge(this.value);" type="text" value=""/>
+</form>
+
+<!-- EKSTRAOPPPGAVE 7 - Utvid oppgave 4 ved å vise input i alert boks i store bokstaver. -->
+<h2>Oppgave 7</h2>
+<form>
+  <input onchange="skrivStorInputAlert(this.value);" type="text" value=""/>
+</form>
+
+<!-- EKSTRAOPPPGAVE 8 - Lag et knapp som skriver tall “1” til console
+    (bruk console.log) hver gang den trykkes.-->
+<h2>Oppgave 8</h2>
+<button onclick="skrivUtEn()">Log tall 1</button>
+
+<!-- EKSTRAOPPPGAVE 9 - Utvid oppgave 8 slik at den skriver til console
+    antall ganger knapp ble trykket. (Tell opp fra 1).-->
+<h2>Oppgave 9</h2>
+<button onclick="tellOpp()">Tell antall click</button>
+
+<!-- EKSTRAOPPPGAVE 10 - Endre oppgave 9 ved å legge til en melding til console
+    slik at den viser "Du har trykket på knappen X ganger"
+    (hvor X er antall ganger knappen ble trykket på).-->
+<h2>Oppgave 10</h2>
+<button onclick="tellOppMelding()">Melding om antall click</button>
+</body>
+
+</html>
