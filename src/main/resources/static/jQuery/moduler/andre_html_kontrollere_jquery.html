@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Andre HTML-kontrollere med jQuery</title>
+</head>
+<body>
+<table>
+  <tr><td>Velg type:</td></tr>
+  <tr><td>Baguett</td>
+    <td><input type="radio" name="frokost" value="Baguette"></td></tr>
+  <tr><td>Smørbrød</td>
+    <td><input type="radio" name="frokost" value="Smørbrød"/></td></tr>
+  <tr><td>Velg pålegg:</td></tr>
+  <tr><td>Reker</td>
+    <td><input type="checkbox" name="paalegg" value="Reker"/></td></tr>
+  <tr><td>Egg</td>
+    <td><input type="checkbox" name="paalegg" value="Egg"/></td></tr>
+  <tr><td>Majones</td>
+    <td><input type="checkbox" name="paalegg" value="Majones"/></td></tr>
+  <tr><td>Velg betalingsmåter:</td></tr>
+  <tr><td><select id="betaling">
+    <option>Kontant</option>
+    <option>Visa</option>
+    <option>Mastercard</option>
+  </select>
+  </td></tr>
+</table>
+<span id="resultat"></span><br/>
+<button onclick="velg()">Velg</button>
+<script type="application/javascript">
+  function velg(){
+    let ut="Frokost : "+ $("input:radio[name=frokost]:checked").val();
+    ut += "<br/>Med pålegg: ";
+    const deValgte = $("input:checkbox[name=paalegg]:checked");
+    for (let valgt of deValgte){
+      ut +=valgt.defaultValue+" ";
+    }
+    ut += "<br/>Betalingsmåte : "+$("#betaling").val();
+    $("#resultat").html(ut);
+  }
+</script>
+</body>
+</html>
