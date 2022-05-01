@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <h2>Oppgave 1</h2>
+
+    <!-- Lag en enkel HTML-side der du kan skrive inn navnet og alderen din i to forskjellige
+tekstbokser. Skriv så JavaScript-kode i samme fil for å vise navnet og alderen når en knapp
+trykkes. Lag så en sjekk på aldersfeltet om feltet inneholder et tall som er større enn null.
+Dersom det ikke er det skal det skrives ut en feilmelding enten via en «alert»-boks eller i et
+eget felt.-->
+
+        Navn: <label for="navn"></label><input id="navn" type="text" value=""/>
+        Alder: <label for="alder"></label><input id="alder" type="text" value=""/>
+        <button id="printInfo">Skriv ut navn og alder</button>
+        <div id="output"></div>
+
+    <h2>Oppgave 2</h2>
+
+    <!-- HTML-side som konverterer fra fahrenheit til celcius og omvendt.
+    Lag input felter. JavaScript skal brukes ved beregning og utlegging av resultater -->
+
+        Fahrenheit: <label for="fahrenheit"></label><input id="fahrenheit" type="text" value=""/>
+        Calsius: <label for="celcius"></label><input id="celcius" type="text" value=""/>
+
+    <h2>Oppgave 3</h2>
+
+    <!-- HTML-kalkulator med to input felter og fire knapper, en for hver regneart-
+    JS-kode som er avhengig av hvilken knapp som er trykket viser resultatet av regnestykker.
+    Feilmeldinger skal også vises dersom det blir skrevet inn noe annet enn tall i inputboksene-->
+
+        <label for="in_1"></label><input id="in_1" type="number" value=""/>
+        <label for="in_2"></label><input id="in_2" type="number" value=""/>
+        
+        <button id="pluss">+</button>
+        <button id="minus">-</button>
+        <button id="gange">*</button>
+        <button id="dele">/</button>
+        
+        <div id="kalk-output"></div>  
+
+</body>
+</html>
