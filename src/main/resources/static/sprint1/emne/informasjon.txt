@@ -1,0 +1,31 @@
+Hvis du lager en GET-mapping for rot (altså "@GetMapping("/")"), 
+så vil denne overstyre en eventuell statisk index.html når du prøver å nå "localhost:8080/". 
+
+! Løsning: Ikke lag GET-mapping for rot, bruk "@GetMapping("/et-eller-annet")"! :)
+
+Hvis du trykker på en av nettleser-knappene i en HTML-fil i editoren til IntelliJ, 
+så vil filen ikke åpnes via Apache Tomcat-serveren. Det betyr at kommunikasjon mot Apache Tomcat-serveren 
+(på port 8080) fra denne nettsiden (på en annen port, vanligvis 63342) vil blokkeres på grunn 
+av sikkerhetshensyn. Slik kommunikasjon, på tvers av domener, kalles "Cross-origin resource sharing" (CORS). 
+
+! Løsning: Det er flere måter en kan tillate slik kommunikasjon, men den enkleste løsningen er å eksplisitt 
+gå inn på "localhost:8080/", slik at vi unngår CORS fullstendig.
+
+IntelliJ vil ikke automatisk bygge ditt Spring-prosjekt på nytt når du gjør endringer i kildekoden. 
+Dette gjelder også for statisk innhold, slik som index.html. Det betyr at når en endring gjøres, så blir 
+ikke denne synlig før filen lagres og prosjektet bygges.
+
+! Løsning: Hvis du gjør en endring i kildekoden (Java-klasser eller statisk inhold), så må du derfor bygge 
+prosjektet (grønn hammer øverst til høyre eller CTRL-F9) før endringen blir synlig.
+Hos noen virker det som om jQuery-biblioteket har blitt lagt til som en Java-avhengighet. Det går jo 
+naturligvis ikke så bra og gir feilmeldinger av typen 
+"Error: java: Illegal char <:> at index 4: http:\api.jquery.com". Dette er trolig en bug i IntelliJ.
+
+! Løsning: Gå inn i "Project Structure" (CTRL+Alt+Shift+s i Windows), velg "Modules" og fanen "Dependencies".
+Slett jQuery-avhengighet(er) og start IntelliJ på nytt.
+
+Uforståelige problemer oppstår!
+Løsning: Hvis alt annet feiler, kan du forsøke lage et nytt prosjekt og 
+kopiere kun kildekodefilene (.html/.js/.java) over fra det gamle prosjektet. 
+Hvis det har blitt noe feil med prosjektkonfigurasjonen i IntelliJ så kan dette fungere, og det er ofte 
+mye raskere enn å forsøke og "reparere" prosjektet i IntelliJ.
